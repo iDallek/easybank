@@ -1,11 +1,9 @@
 <script setup lang="ts">
-
+  import HeaderMenu from './components/Header.vue';
 </script>
 
 <template>
-  <header>
-    Header
-  </header>
+  <HeaderMenu />
 
   <main>
     Content
