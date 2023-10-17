@@ -14,11 +14,7 @@
     </Transition>
     <Transition name="modal">
       <ul class="menu__items" v-show="isMenuOpen">
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-        <li>Blog</li>
-        <li>Careers</li>
+        <li v-for="menuItem in menuItems" :key="menuItem.id">{{ menuItem.label }}</li>
       </ul>
     </Transition>
   </div>
@@ -30,6 +26,13 @@
     data() {
       return {
         isMenuOpen: false,
+        menuItems: [
+          { id: 1, label: 'Home' },
+          { id: 2, label: 'About' },
+          { id: 3, label: 'Contact' },
+          { id: 4, label: 'Blog' },
+          { id: 5, label: 'Careers' },
+        ],
       }
     },
     methods: {
