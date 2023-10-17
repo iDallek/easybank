@@ -10,4 +10,14 @@ describe('HeaderMenu', () => {
     expect(wrapper.find('.header__menu').exists()).toBe(true);
   })
   
+  it('Should click on hamburger menu icon toggles menu visibility', () => {
+    const wrapper = mount(HeaderMenu);
+    const menuIcon = wrapper.find('.header__menu img');
+
+    menuIcon.trigger('click');
+    expect(wrapper.vm.isMenuOpen).toBe(true);
+
+    menuIcon.trigger('click');
+    expect(wrapper.vm.isMenuOpen).toBe(false);
+  })
 })
