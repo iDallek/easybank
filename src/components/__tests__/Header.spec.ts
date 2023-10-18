@@ -1,6 +1,6 @@
 import HeaderMenu from '../Header.vue';
 import { describe, expect, it } from 'vitest';
-import { mount } from '@vue/test-utils';
+import { mount, shallowMount } from '@vue/test-utils';
 
 describe('HeaderMenu', () => {
   it('Should render Header Menu with Logo and menu elements', () => {
@@ -19,5 +19,15 @@ describe('HeaderMenu', () => {
 
     menuIcon.trigger('click');
     expect(wrapper.vm.isMenuOpen).toBe(false);
+  })
+
+  it('Should items in menu are rendered when menu is open', async () => {
+    const wrapper = shallowMount(HeaderMenu);
+    wrapper.setData({ isMenuOpen: true });
+
+    await wrapper.vm.$nextTick();
+
+    const menuItems = wrapper.findAll('[data-test="menu__item"]');
+    expect(menuItems.length).toBeGreaterThan(0);
   })
 })

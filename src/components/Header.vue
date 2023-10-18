@@ -9,12 +9,12 @@
   </div>
   <div class="modal">
     <Transition name="modal-background">
-      <div class="modal__menu" v-show="isMenuOpen">
+      <div class="modal__menu" v-if="isMenuOpen">
       </div>
     </Transition>
     <Transition name="modal">
-      <ul class="menu__items" v-show="isMenuOpen">
-        <li v-for="menuItem in menuItems" :key="menuItem.id">{{ menuItem.label }}</li>
+      <ul class="menu__items" v-if="isMenuOpen">
+        <li data-test="menu__item" v-for="menuItem in menuItems" :key="menuItem.id">{{ menuItem.label }}</li>
       </ul>
     </Transition>
   </div>
