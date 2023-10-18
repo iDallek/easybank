@@ -30,4 +30,14 @@ describe('HeaderMenu', () => {
     const menuItems = wrapper.findAll('[data-test="menu__item"]');
     expect(menuItems.length).toBeGreaterThan(0);
   })
+
+  it('Should items in menu are not rendered when menu is closed', async () => {
+    const wrapper = shallowMount(HeaderMenu);
+    wrapper.setData({ isMenuOpen: false });
+
+    await wrapper.vm.$nextTick();
+
+    const menuItems = wrapper.findAll('.menu__item');
+    expect(menuItems.length).toBe(0);
+  })
 })
