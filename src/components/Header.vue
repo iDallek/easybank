@@ -1,22 +1,28 @@
 <template>
   <div class="header">
+
     <div class="header__logo">
       <img src="../assets/logo.svg" alt="logo" />
     </div>
+
     <div class="header__menu">
       <img src="./icons/icon-hamburger.svg" alt="menu" @click="toggleMenu" />
     </div>
+    
   </div>
+
   <div class="modal">
+
     <Transition name="modal-background">
-      <div class="modal__menu" v-if="isMenuOpen">
-      </div>
+      <div class="modal__menu" v-if="isMenuOpen" />
     </Transition>
+
     <Transition name="modal">
       <ul class="menu__items" v-if="isMenuOpen">
         <li data-test="menu__item" v-for="menuItem in menuItems" :key="menuItem.id">{{ menuItem.label }}</li>
       </ul>
     </Transition>
+
   </div>
 </template>
 
@@ -129,6 +135,12 @@
   .modal-leave-to {
     transform: scaleY(.9);
     opacity: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .header__menu {
+      display: none;
+    }
   }
 
 </style>
