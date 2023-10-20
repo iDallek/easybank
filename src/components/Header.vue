@@ -53,6 +53,10 @@
 </script>
 
 <style scoped>
+  .header {
+    background-color: var(--color-background);
+  }
+
   .header__content {
     display: flex;
     justify-content: space-between;
