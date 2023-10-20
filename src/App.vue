@@ -1,13 +1,12 @@
 <script setup lang="ts">
   import HeaderMenu from './components/Header.vue';
+  import Main from './components/Main.vue';
 </script>
 
 <template>
   <HeaderMenu />
 
-  <main>
-    Content
-  </main>
+  <Main />
 
   <footer>
     Footer
