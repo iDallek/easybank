@@ -1,28 +1,30 @@
 <template>
   <div class="header">
+    <div class="header__content">
 
-    <div class="header__logo">
-      <img src="../assets/logo.svg" alt="logo" />
+      <div class="header__logo">
+        <img src="../assets/logo.svg" alt="logo" />
+      </div>
+
+      <div class="header__menu">
+        <img src="./icons/icon-hamburger.svg" alt="menu" @click="toggleMenu" />
+      </div>
+      
     </div>
 
-    <div class="header__menu">
-      <img src="./icons/icon-hamburger.svg" alt="menu" @click="toggleMenu" />
+    <div class="modal">
+
+      <Transition name="modal-background">
+        <div class="modal__menu" v-if="isMenuOpen" />
+      </Transition>
+
+      <Transition name="modal">
+        <ul class="menu__items" v-if="isMenuOpen">
+          <li data-test="menu__item" v-for="menuItem in menuItems" :key="menuItem.id">{{ menuItem.label }}</li>
+        </ul>
+      </Transition>
+        
     </div>
-    
-  </div>
-
-  <div class="modal">
-
-    <Transition name="modal-background">
-      <div class="modal__menu" v-if="isMenuOpen" />
-    </Transition>
-
-    <Transition name="modal">
-      <ul class="menu__items" v-if="isMenuOpen">
-        <li data-test="menu__item" v-for="menuItem in menuItems" :key="menuItem.id">{{ menuItem.label }}</li>
-      </ul>
-    </Transition>
-
   </div>
 </template>
 
@@ -51,10 +53,11 @@
 </script>
 
 <style scoped>
-  .header {
+  .header__content {
     display: flex;
     justify-content: space-between;
     padding: 20px 30px;
+
   }
 
   .header__logo,
@@ -140,6 +143,18 @@
   @media screen and (min-width: 768px) {
     .header__menu {
       display: none;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .header {
+      display: flex;
+      justify-content: center;
+    }
+
+    .header__content {
+      max-width: 1024px;
+      width: 100%;
     }
   }
 
