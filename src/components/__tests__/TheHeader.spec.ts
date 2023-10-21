@@ -1,17 +1,17 @@
-import HeaderMenu from '../Header.vue';
+import TheHeader from '../TheHeader.vue';
 import { describe, expect, it } from 'vitest';
 import { mount, shallowMount } from '@vue/test-utils';
 
-describe('HeaderMenu', () => {
+describe('TheHeader', () => {
   it('Should render Header Menu with Logo and menu elements', () => {
-    const wrapper = mount(HeaderMenu);
+    const wrapper = mount(TheHeader);
 
     expect(wrapper.find('.header__logo').exists()).toBe(true);
     expect(wrapper.find('.header__menu').exists()).toBe(true);
   })
   
   it('Should click on hamburger menu icon toggles menu visibility', () => {
-    const wrapper = mount(HeaderMenu);
+    const wrapper = mount(TheHeader);
     const menuIcon = wrapper.find('.header__menu img');
 
     menuIcon.trigger('click');
@@ -22,7 +22,7 @@ describe('HeaderMenu', () => {
   })
 
   it('Should items in menu are rendered when menu is open', async () => {
-    const wrapper = shallowMount(HeaderMenu);
+    const wrapper = shallowMount(TheHeader);
     wrapper.setData({ isMenuOpen: true });
 
     await wrapper.vm.$nextTick();
@@ -32,7 +32,7 @@ describe('HeaderMenu', () => {
   })
 
   it('Should items in menu are not rendered when menu is closed', async () => {
-    const wrapper = shallowMount(HeaderMenu);
+    const wrapper = shallowMount(TheHeader);
     wrapper.setData({ isMenuOpen: false });
 
     await wrapper.vm.$nextTick();

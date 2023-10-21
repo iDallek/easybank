@@ -1,10 +1,10 @@
 <script setup lang="ts">
-  import HeaderMenu from './components/Header.vue';
-  import Main from './components/Main.vue';
+  import Header from './components/TheHeader.vue';
+  import Main from './components/TheMain.vue';
 </script>
 
 <template>
-  <HeaderMenu />
+  <Header />
 
   <Main />
 

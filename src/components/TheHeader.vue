@@ -30,7 +30,7 @@
 
 <script lang="ts">
   export default {
-    name: 'HeaderMenu',
+    name: 'TheHeader',
     data() {
       return {
         isMenuOpen: false,

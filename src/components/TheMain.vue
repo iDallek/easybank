@@ -18,7 +18,7 @@
   import RequestInviteButton from "@/core/components/RequestInviteButton.vue"
 
   export default {
-    name: 'MainComponent',
+    name: 'TheMain',
     components: {
       RequestInviteButton
     }
