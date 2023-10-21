@@ -9,18 +9,27 @@
       <p class="main__text">
         Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing, and much more.
       </p>
-      <button>Request invite</button>
+      <RequestInviteButton class="request__btn" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
+  import RequestInviteButton from "@/core/components/RequestInviteButton.vue"
+
   export default {
-    name: 'MainComponent'
+    name: 'MainComponent',
+    components: {
+      RequestInviteButton
+    }
   }
 </script>
 
 <style scoped>
+  .main {
+    margin-bottom: 80px;
+  }
+
   .main__content {
     padding: 0 30px;
     margin-top: -280px;
@@ -64,6 +73,10 @@
     transform: translate(-50%, -50%);
     width: 90%;
     z-index: -1;
+  }
+
+  .request__btn {
+    margin-top: 45px;
   }
 
 
