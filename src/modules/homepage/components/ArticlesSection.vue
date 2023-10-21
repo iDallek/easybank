@@ -5,7 +5,7 @@
       <img :src="getImgUrl(article.image)" alt="article.title" />
       <p>{{ article.author }}</p>
       <h2>{{ article.title }}</h2>
-      <p>{{ article.content }}</p>
+      <p>{{ summaryText(article.content, 130) }}</p>
     </div>
   </div>
 </template>
@@ -35,6 +35,11 @@
             this.articles = data.slice(-4)
           })
       },
+      summaryText(text: string, maxLength: number): string {
+        const trimmedString = text.slice(0, maxLength)
+
+        return trimmedString.slice(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(' '))) + '...'
+      }
     },
     mounted() {
         this.fetchArticles()
