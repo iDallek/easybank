@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button>Request invite</button>
+    <button class="invite__btn">Request invite</button>
   </div>
 </template>
 
@@ -12,7 +12,7 @@
 </script>
 
 <style scoped>
-  button {
+  .invite__btn {
     background-image: linear-gradient(90deg, var(--vt-c-lime-green), var(--vt-c-light-blue));
     color: var(--vt-c-white);
     border: none;
