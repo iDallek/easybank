@@ -62,7 +62,7 @@
     height: 130%;
     width: 101%;
     transform: translate(-50%, -50%);
-    z-index: -2;
+    z-index: 1;
   }
 
   .image__mockup {
@@ -72,12 +72,11 @@
     margin-top: calc(-35vh + 15vw);
     transform: translate(-50%, -50%);
     width: 90%;
-    z-index: -1;
+    z-index: 2;
   }
 
   .request__btn {
     margin-top: 45px;
   }
-
 
 </style>

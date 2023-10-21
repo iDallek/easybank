@@ -85,7 +85,7 @@
     display: flex;
     justify-content: center;
     align-items: stretch;
-    z-index: 0;
+    z-index: 98;
   }
 
   .menu__items {
@@ -101,7 +101,7 @@
     padding: 20px 0;
     width: calc(100% - 50px);
     max-width: 400px;
-    z-index: 1;
+    z-index: 99;
   }
 
   .menu__items li {
