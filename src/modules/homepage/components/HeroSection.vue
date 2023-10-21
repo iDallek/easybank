@@ -1,12 +1,12 @@
 <template>
-  <div class="main">
+  <div class="hero">
     <div class="hero__background">
-      <img src="../assets/bg-intro-mobile.svg" alt="background" class="hero__background_svg" />
-      <img src="../assets/images/image-mockups.png" alt="app mockup on mobile devices" class="image__mockup" />
+      <img src="@/assets/images/bg-intro-mobile.svg" alt="background" class="hero__background_svg" />
+      <img src="@/assets/images/image-mockups.png" alt="app mockup on mobile devices" class="image__mockup" />
     </div>
-    <div class="main__content">
-      <h1 class="main__title">Next generation digital banking</h1>
-      <p class="main__text">
+    <div class="hero__content">
+      <h1 class="hero__title">Next generation digital banking</h1>
+      <p class="hero__text">
         Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing, and much more.
       </p>
       <RequestInviteButton class="request__btn" />
@@ -18,7 +18,7 @@
   import RequestInviteButton from "@/core/components/RequestInviteButton.vue"
 
   export default {
-    name: 'TheMain',
+    name: 'HeroSection',
     components: {
       RequestInviteButton
     }
@@ -26,17 +26,17 @@
 </script>
 
 <style scoped>
-  .main {
+  .hero {
     margin-bottom: 80px;
   }
 
-  .main__content {
+  .hero__content {
     padding: 0 30px;
     margin-top: -280px;
     text-align: center;
   }
 
-  .main__title {
+  .hero__title {
     font-size: 2.5rem;
     margin-bottom: 20px;
     line-height: 1.3em;
@@ -44,7 +44,7 @@
     margin-top: 35vh;
   }
 
-  .main__text {
+  .hero__text {
     font-size: 0.8em;
   }
 

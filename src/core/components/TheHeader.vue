@@ -3,11 +3,11 @@
     <div class="header__content">
 
       <div class="header__logo">
-        <img src="../assets/logo.svg" alt="logo" />
+        <img src="@/assets/images/logo.svg" alt="logo" />
       </div>
 
       <div class="header__menu">
-        <img src="./icons/icon-hamburger.svg" alt="menu" @click="toggleMenu" />
+        <img src="@/assets/icons/icon-hamburger.svg" alt="menu" @click="toggleMenu" />
       </div>
       
     </div>

@@ -1,12 +1,12 @@
 <script setup lang="ts">
-  import Header from './components/TheHeader.vue';
-  import Main from './components/TheMain.vue';
+  import Header from '@/core/components/TheHeader.vue';
+  import HomePage from '@/modules/homepage/views/HomePage.vue';
 </script>
 
 <template>
   <Header />
 
-  <Main />
+  <HomePage />
 
   <footer>
     Footer
