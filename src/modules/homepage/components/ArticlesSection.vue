@@ -1,11 +1,15 @@
 <template>
-  <div>
-    <h1>Lastest Article</h1>
-    <div v-for="article in articles.slice().reverse()" :key="article.id">
-      <img :src="getImgUrl(article.image)" alt="article.title" />
-      <p>{{ article.author }}</p>
-      <h2>{{ article.title }}</h2>
-      <p>{{ summaryText(article.content, 130) }}</p>
+  <div class="article__section">
+    <h1 class="article__section__title">Lastest Article</h1>
+    <div class="articles__area">
+      <div v-for="article in articles.slice().reverse()" :key="article.id" class="article">
+      <img :src="getImgUrl(article.image)" alt="article.title" class="article__image" />
+      <div class="article__content">
+        <p class="article__author">{{ "By " + article.author }}</p>
+        <h2 class="article__title">{{ article.title }}</h2>
+        <p class="article__text">{{ summaryText(article.content, 130) }}</p>
+      </div>
+    </div>
     </div>
   </div>
 </template>
@@ -48,5 +52,67 @@
 </script>
 
 <style scoped>
+  .article__section {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0;
+  }
+
+  .article__section__title {
+    font-size: 2em;
+    font-weight: 400;
+    margin: 20px 30px;
+    color: var(--color-heading);
+    text-align: center;
+  }
+
+  .articles__area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0 30px;
+  } 
+
+  .article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px 0;
+    background-color: var(--color-background);
+    border-radius: 5px;
+    width: 315px;
+  }
+
+  .article__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+  }
+
+  .article__content {
+    padding: 0 20px;
+    margin: 40px 0;
+  }
+
+  .article__author {
+    font-size: 0.7em;
+    margin-bottom: 10px;
+  }
+
+  .article__title {
+    font-size: 1.1em;
+    letter-spacing: -1px;
+    line-height: 1.2em;
+    margin-bottom: 10px;
+    font-weight: 400;
+    color: var(--color-heading);
+  }
+
+  .article__text {
+    font-size: 0.8em;
+    line-height: 1.4em;
+    color: var(--color-text);
+  }
 
 </style>
