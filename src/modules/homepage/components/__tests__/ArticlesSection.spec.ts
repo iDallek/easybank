@@ -8,7 +8,7 @@ describe('ArticlesSection', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('ensure fetches articles are rendered', async () => {
+  it('ensure that only 4 fetch articles are rendered', async () => {
     const articles = [
       {
         id: 1,
@@ -37,6 +37,13 @@ describe('ArticlesSection', () => {
         author: 'Author 4',
         content: 'Eaque ipsa quae ab illo inventore veritatis et quasi architecto.',
         image: 'article4.jpg'
+      },
+      {
+        id: 5,
+        title: 'Article 5',
+        author: 'Author 5',
+        content: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut.',
+        image: 'article5.jpg'
       }
     ]
     
@@ -50,10 +57,10 @@ describe('ArticlesSection', () => {
     await flushPromises()
 
     expect(wrapper.findAll('.article')).toHaveLength(4)
-    expect(wrapper.find('.article__title').text()).toBe('Article 4')
-    expect(wrapper.find('.article__author').text()).toBe('By Author 4')
-    expect(wrapper.find('.article__text').text()).toBe('Eaque ipsa quae ab illo inventore veritatis et quasi...')
-    expect(wrapper.find('.article__image').attributes('src')).toBe('http://localhost:3000/src/assets/images/article4.jpg')
+    expect(wrapper.find('.article__title').text()).toBe('Article 5')
+    expect(wrapper.find('.article__author').text()).toBe('By Author 5')
+    expect(wrapper.find('.article__text').text()).toBe('Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit...')
+    expect(wrapper.find('.article__image').attributes('src')).toBe('http://localhost:3000/src/assets/images/article5.jpg')
   })
 
   it('ensure article content will be reduced to approximately 130 characters', async () => {
