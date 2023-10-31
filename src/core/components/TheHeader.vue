@@ -1,37 +1,28 @@
 <template>
   <div class="header">
     <div class="header__content">
-      
       <div class="header__logo">
         <img src="@/assets/images/logo.svg" alt="logo" />
       </div>
-      
       <div>
         <ul class="menu__items__desktop">
           <li data-test="menu__item" v-for="menuItem in menuItems" :key="menuItem.id">{{ menuItem.label }}</li>
         </ul>
       </div>
-      
       <RequestInviteButton class="request__btn" />
-      
       <div class="header__menu">
         <img src="@/assets/icons/icon-hamburger.svg" alt="menu" @click="toggleMenu" />
       </div>
-      
     </div>
-    
     <div class="modal">
-      
       <Transition name="modal-background">
         <div class="modal__menu" v-if="isMenuOpen" />
       </Transition>
-      
       <Transition name="modal">
         <ul class="menu__items__mobile" v-if="isMenuOpen">
           <li data-test="menu__item" v-for="menuItem in menuItems" :key="menuItem.id">{{ menuItem.label }}</li>
         </ul>
       </Transition>
-      
     </div>
   </div>
 </template>
@@ -146,11 +137,17 @@ export default {
 }
 
 .menu__items__desktop li {
-  padding: 20px 15px;
+  padding: 25px 15px 20px;
   font-weight: 400;
   font-size: 1rem;
   cursor: pointer;
-  /* height: 0; */
+  border-bottom: solid 5px transparent;
+}
+
+.menu__items__desktop li:hover {
+  color: var(--vt-c-dark-blue);
+  border-bottom: 5px solid;
+  border-image: linear-gradient(90deg, var(--vt-c-lime-green), var(--vt-c-light-blue)) 1;
 }
 
 .request__btn {
