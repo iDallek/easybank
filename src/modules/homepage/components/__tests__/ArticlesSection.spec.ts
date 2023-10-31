@@ -3,6 +3,11 @@ import { describe, expect, it, vi } from 'vitest';
 import ArticlesSection from '../ArticlesSection.vue'
 
 describe('ArticlesSection', () => {
+  it('should component render correctly', () => {
+    const wrapper = mount(ArticlesSection)
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
   it('ensure fetches articles are rendered', async () => {
     const articles = [
       {

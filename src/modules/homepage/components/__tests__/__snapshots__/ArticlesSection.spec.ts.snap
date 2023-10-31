@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ArticlesSection > should component render correctly 1`] = `
+"<div data-v-1c7763af=\\"\\" class=\\"article__section\\">
+  <h1 data-v-1c7763af=\\"\\" class=\\"article__section__title\\">Lastest Article</h1>
+  <div data-v-1c7763af=\\"\\" class=\\"articles__area\\"></div>
+</div>"
+`;
