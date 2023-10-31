@@ -55,4 +55,25 @@ describe('ArticlesSection', () => {
     expect(wrapper.find('.article__text').text()).toBe('Eaque ipsa quae ab illo inventore veritatis et quasi...')
     expect(wrapper.find('.article__image').attributes('src')).toBe('http://localhost:3000/src/assets/images/article4.jpg')
   })
+
+  it('ensure article content will be reduced to approximately 130 characters', async () => {
+    const mockArticles = [{
+      id: 1,
+      title: 'Article 1',
+      author: 'Author 1',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ',
+      image: 'article1.jpg'
+    }]
+
+    vi.spyOn(window, 'fetch').mockImplementationOnce(() => {
+      return Promise.resolve({
+        json: () => Promise.resolve(mockArticles)
+      } as Response)
+    })
+
+    const wrapper = mount(ArticlesSection)
+    await flushPromises()
+
+    expect(wrapper.find('.article__text').text()).toBe('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...')
+  })
 })
