@@ -18,7 +18,7 @@
     border: none;
     border-radius: 30px;
     padding: 15px 40px;
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 700;
     cursor: pointer;
   }
