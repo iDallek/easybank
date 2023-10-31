@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils'
+import { mount, flushPromises } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest';
 import ArticlesSection from '../ArticlesSection.vue'
 
@@ -47,13 +47,12 @@ describe('ArticlesSection', () => {
     })
 
     const wrapper = mount(ArticlesSection)
+    await flushPromises()
 
-    setTimeout(() => {
-      expect(wrapper.findAll('.article')).toHaveLength(4)
-      expect(wrapper.find('.article__title').text()).toBe('Article 4')
-      expect(wrapper.find('.article__author').text()).toBe('By Author 4')
-      expect(wrapper.find('.article__text').text()).toBe('Eaque ipsa quae ab illo inventore veritatis et...')
-      expect(wrapper.find('.article__image').attributes('src')).toBe('http://localhost/assets/images/article4.jpg')
-    }, 1000)
+    expect(wrapper.findAll('.article')).toHaveLength(4)
+    expect(wrapper.find('.article__title').text()).toBe('Article 4')
+    expect(wrapper.find('.article__author').text()).toBe('By Author 4')
+    expect(wrapper.find('.article__text').text()).toBe('Eaque ipsa quae ab illo inventore veritatis et quasi...')
+    expect(wrapper.find('.article__image').attributes('src')).toBe('http://localhost:3000/src/assets/images/article4.jpg')
   })
 })
