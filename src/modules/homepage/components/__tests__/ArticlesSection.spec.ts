@@ -3,12 +3,12 @@ import { describe, expect, it, vi } from 'vitest';
 import ArticlesSection from '../ArticlesSection.vue'
 
 describe('ArticlesSection', () => {
-  it('should component render correctly', () => {
+  it('Should component render correctly', () => {
     const wrapper = mount(ArticlesSection)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('ensure that only 4 fetch articles are rendered', async () => {
+  it('Should render only 4 articles fetches', async () => {
     const articles = [
       {
         id: 1,
@@ -63,7 +63,7 @@ describe('ArticlesSection', () => {
     expect(wrapper.find('.article__image').attributes('src')).toBe('http://localhost:3000/src/assets/images/article5.jpg')
   })
 
-  it('ensure article content will be reduced to approximately 130 characters', async () => {
+  it('Should render article content be shortened to approximately 130 characters', async () => {
     const mockArticles = [{
       id: 1,
       title: 'Article 1',
