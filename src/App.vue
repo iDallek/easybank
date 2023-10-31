@@ -1,16 +1,13 @@
 <script setup lang="ts">
   import Header from '@/core/components/TheHeader.vue';
   import HomePage from '@/modules/homepage/views/HomePage.vue';
+  import Footer from '@/core/components/TheFooter.vue';
 </script>
 
 <template>
   <Header />
-
   <HomePage />
-
-  <footer class="app__footer">
-    Footer
-  </footer>
+  <Footer />
 </template>
 
 <style scoped>
