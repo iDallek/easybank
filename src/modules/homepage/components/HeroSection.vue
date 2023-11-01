@@ -1,7 +1,7 @@
 <template>
   <div class="hero">
     <div class="hero__background">
-      <img src="@/assets/images/bg-intro-mobile.svg" alt="background" class="hero__background_svg" />
+      <img alt="background" class="hero__background_svg" />
       <img src="@/assets/images/image-mockups.png" alt="app mockup on mobile devices" class="image__mockup" />
     </div>
     <div class="hero__content">
@@ -59,10 +59,13 @@
     position: absolute;
     top: 40vw;
     left: 50%;
-    height: 130%;
+    height: 140%;
     width: 101%;
     transform: translate(-50%, -50%);
     z-index: 1;
+    background-image: url(@/assets/images/bg-intro-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 
   .image__mockup {
