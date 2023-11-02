@@ -59,6 +59,8 @@ export default {
 <style scoped>
 .header {
   background-color: var(--color-background);
+  position: relative;
+  z-index: 99;
 }
 
 .header__content {
