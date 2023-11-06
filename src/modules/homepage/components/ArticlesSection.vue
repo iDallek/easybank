@@ -1,7 +1,7 @@
 <template>
   <div class="article__section">
     <div class="article__area__content">
-      <h1 class="article__section__title">Lastest Article</h1>
+      <h1 class="article__section__title">Lastest Articles</h1>
       <div class="articles__area">
         <div v-for="article in articles.slice().reverse()" :key="article.id" class="article">
           <img :src="getImgUrl(article.image)" alt="article.title" class="article__image" />
