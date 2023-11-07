@@ -29,7 +29,7 @@
         <RequestInviteButton class="request__btn" />
         <div class="attribution">
           <span>Challenge by <a class="frontendmentor__link" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</span>
-          <span>Coded by <a class="personal__link" href="#">Gabriel Carvalho</a>.</span>
+          <span>Coded by <a class="personal__link" href="https://github.com/iDallek" target="_blank">Gabriel Carvalho</a>.</span>
         </div>
       </div>
       
