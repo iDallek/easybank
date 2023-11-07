@@ -3,7 +3,7 @@
 exports[`ArticlesSection > Should component render correctly 1`] = `
 "<div data-v-1c7763af=\\"\\" class=\\"article__section\\">
   <div data-v-1c7763af=\\"\\" class=\\"article__area__content\\">
-    <h1 data-v-1c7763af=\\"\\" class=\\"article__section__title\\">Lastest Article</h1>
+    <h1 data-v-1c7763af=\\"\\" class=\\"article__section__title\\">Lastest Articles</h1>
     <div data-v-1c7763af=\\"\\" class=\\"articles__area\\"></div>
   </div>
 </div>"
