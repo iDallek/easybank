@@ -4,7 +4,7 @@
       <h1 class="article__section__title">Lastest Articles</h1>
       <div class="articles__area">
         <div v-for="article in articles.slice().reverse()" :key="article.id" class="article">
-          <img :src="getImgUrl(article.image)" alt="article.title" class="article__image" />
+          <img :src="`/images/${article.image}`" alt="article.title" class="article__image" />
           <div class="article__content">
             <p class="article__author">{{ "By " + article.author }}</p>
             <h2 class="article__title">{{ article.title }}</h2>
@@ -21,13 +21,6 @@
 
   export default {
     name: 'ArticlesSection',
-    setup() {
-      const getImgUrl = (pic: string): string => {
-        return new URL("@/assets/images/", import.meta.url).href + `/${pic}`
-      }
-
-      return { getImgUrl }
-    },
     data() {
       return{
         baseApiUrl: 'https://easybank-fakeapi.vercel.app',
