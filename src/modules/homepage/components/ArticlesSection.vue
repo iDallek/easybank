@@ -30,12 +30,13 @@
     },
     data() {
       return{
+        baseApiUrl: 'https://easybank-fakeapi.vercel.app',
         articles: [] as IArticle[]
       }
     },
     methods: {
       fetchArticles() {
-        fetch('http://localhost:3001/articles')
+        fetch(`${this.baseApiUrl}/articles`)
           .then(response => response.json())
           .then(data => {
             this.articles = data.slice(-4)
