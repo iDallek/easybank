@@ -23,7 +23,7 @@
     name: 'ArticlesSection',
     setup() {
       const getImgUrl = (pic: string): string => {
-        return new URL("../../../assets/images/", import.meta.url).href + `/${pic}`
+        return new URL("@/assets/images/", import.meta.url).href + `/${pic}`
       }
 
       return { getImgUrl }
