@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Screenshot
 
-![showcase project](https://github.com/iDallek/easybank/blob/1bf93496f80781633c2d0008a305901e8b6a7900/public/images/showcase-project.jpg?raw=true)
+![showcase project](https://github.com/iDallek/easybank/blob/main/public/images/showcase-project.png?raw=true)
 
 ### Links
 
